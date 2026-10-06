@@ -92,6 +92,15 @@
   }
 
   async function start() {
+    // WebCrypto only exists on secure origins, so an http:// page can never decrypt.
+    if (!window.isSecureContext && location.protocol === 'http:' && !/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+      location.replace('https://' + location.host + location.pathname + location.search + location.hash);
+      return;
+    }
+    if (!window.isSecureContext) {
+      showLogin('此頁面必須用 https:// 開啟才能解密。');
+      return;
+    }
     if (!window.crypto || !crypto.subtle || !window.DecompressionStream) {
       showLogin('你的瀏覽器不支援所需的加密功能，請改用最新版 Chrome、Edge、Safari 或 Firefox。');
       return;
