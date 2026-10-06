@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Quiz Room</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="locked">
+<header class="topbar">
+  <a class="brand" href="#/" title="回首頁">📝 <span><b>Quiz</b> Room</span></a>
+  <nav class="topnav" id="topnav">
+    <a href="#/">首頁</a>
+    <a href="#/practice">練習</a>
+    <a href="#/wrong">錯題本</a>
+    <a href="#/history">紀錄</a>
+    <a href="#/bank">題庫</a>
+  </nav>
+  <button class="theme-btn" id="themeBtn" title="切換深色／淺色">◐</button>
+  <button class="theme-btn" id="logoutBtn" title="登出（清除此裝置記住的登入）" onclick="window.quizLogout()">⎋</button>
+</header>
+<main id="app"></main>
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true"></div>
+<script src="js/auth.js"></script>
+</body>
+</html>
